@@ -1,4 +1,4 @@
-package utils;
+package com.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,9 +25,20 @@ import org.apache.logging.log4j.core.config.AppenderRef;
 import org.apache.logging.log4j.core.config.Configuration;
 import org.apache.logging.log4j.core.config.LoggerConfig;
 import org.apache.logging.log4j.core.layout.PatternLayout;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import com.config.CustomerProperties;
+
+@Component
 public class LogUtil {
-	private static final String loggerDir = "D:/weblogs/SpringBoot/";
+	
+	private static String loggerDir;
+	
+	@Autowired
+	public LogUtil(CustomerProperties properties) {
+		LogUtil.loggerDir = properties.getLogDir();
+	}
 
 	private static final String patternStr = "[%d{yyyy-MM-dd HH:mm:ss}] %p %t %c - %m%n";
 

@@ -3,7 +3,7 @@
 	
 	<properties> 
 		<property name="logDir" value="D:/weblogs/SpringBoot" />
-		<property name="logLevel" value="DEBUG" />
+		<property name="logLevel" value="INFO" />
 		<property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5level [%file:%line] %msg%n" />
 	</properties>
 
