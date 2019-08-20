@@ -1,0 +1,27 @@
+################# 基础设置 #################
+server:
+  port: 8080
+  context-path: /
+################# 日志设置 #################
+logging:
+  config: classpath:log4j2.xml
+################# server名、thymeleaf、mvc设置 #################
+spring:
+  application:
+    name: spring-boot
+  thymeleaf:
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    check-template-location: true
+    enabled: true
+    prefix: classpath:/static/
+    content-type: text/html
+    suffix: .html
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /view
+################# 自定义设置 #################       
+customer:
+  index: /start

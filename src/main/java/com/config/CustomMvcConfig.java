@@ -15,9 +15,6 @@ public class CustomMvcConfig implements WebMvcConfigurer {
 	@Autowired
 	private CustomerProperties properties;
 	
-	@Autowired
-	private CustomInterceptor customInterceptor;
-	
 	
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("redirect:" + properties.getIndex());
@@ -27,7 +24,7 @@ public class CustomMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		// TODO Auto-generated method stub
-		registry.addInterceptor(customInterceptor).addPathPatterns("/*").excludePathPatterns("/start");
+		registry.addInterceptor(new CustomInterceptor()).addPathPatterns("/*").excludePathPatterns("/start");
 	}
 
 }
