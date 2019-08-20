@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.interceptor.TestInterceptor;
+import com.interceptor.CustomInterceptor;
 
 @Configuration
 public class CustomMvcConfig implements WebMvcConfigurer {
@@ -16,7 +16,7 @@ public class CustomMvcConfig implements WebMvcConfigurer {
 	private CustomerProperties properties;
 	
 	@Autowired
-	private TestInterceptor testInterceptor;
+	private CustomInterceptor testInterceptor;
 	
 	
 	public void addViewControllers(ViewControllerRegistry registry) {
@@ -27,7 +27,7 @@ public class CustomMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		// TODO Auto-generated method stub
-		registry.addInterceptor(testInterceptor).addPathPatterns("/*").excludePathPatterns("/login.do","/logout.do");
+		registry.addInterceptor(testInterceptor).addPathPatterns("/*").excludePathPatterns("/start");
 	}
 
 }

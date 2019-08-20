@@ -3,7 +3,6 @@ package com.utils;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,6 +29,11 @@ import org.springframework.stereotype.Component;
 
 import com.config.CustomerProperties;
 
+/** 
+* @ClassName: LogUtil 
+* @Description: 自定义一个日志输出文件，结束后最好调用下stop方法，防止日志阻塞
+* @author: zhuyj
+*/
 @Component
 public class LogUtil {
 	
@@ -123,14 +127,6 @@ public class LogUtil {
 		}
 		return LogManager.getLogger(loggerName);
 	}
-	
-	/** 获取全局定义Logger */
-	public static Logger getLoggerByXml(String name) {  
-        if(StringUtils.isEmpty(name)) {
-        	name = "default";
-        }
-        return LogManager.getLogger(name);
-    }
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		for (int i = 0; i < 10; i++) {	

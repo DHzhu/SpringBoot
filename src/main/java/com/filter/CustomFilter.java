@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TestFilter implements Filter{
+public class CustomFilter implements Filter{
 
 	@Override
 	public void destroy() {
