@@ -9,10 +9,12 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import org.springframework.stereotype.Component;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-@Component
 public class CustomFilter implements Filter{
+	
+	private static Logger log = LogManager.getLogger("default");
 
 	@Override
 	public void destroy() {
@@ -24,7 +26,7 @@ public class CustomFilter implements Filter{
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		System.out.println("-----------doFilter--------------");
+		log.info("-----------doFilter--------------");
 		filterChain.doFilter(servletRequest, servletResponse);
 	}
 

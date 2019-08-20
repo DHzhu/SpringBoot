@@ -21,7 +21,7 @@ public class GlobalController {
 	@ResponseBody
 	@RequestMapping("/start")
 	public Map<String, Object> queryDays(){
-		log.info("test");
+		log.info("start");
 		return null;
 	}
 

@@ -16,7 +16,7 @@ public class CustomMvcConfig implements WebMvcConfigurer {
 	private CustomerProperties properties;
 	
 	@Autowired
-	private CustomInterceptor testInterceptor;
+	private CustomInterceptor customInterceptor;
 	
 	
 	public void addViewControllers(ViewControllerRegistry registry) {
@@ -27,7 +27,7 @@ public class CustomMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		// TODO Auto-generated method stub
-		registry.addInterceptor(testInterceptor).addPathPatterns("/*").excludePathPatterns("/start");
+		registry.addInterceptor(customInterceptor).addPathPatterns("/*").excludePathPatterns("/start");
 	}
 
 }

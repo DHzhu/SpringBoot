@@ -8,12 +8,12 @@ import com.filter.CustomFilter;
 
 @Configuration
 public class CustomFilterConfig {
+
 	
 	@Bean
-	public FilterRegistrationBean<CustomFilter> testFilter(){
+	public FilterRegistrationBean<CustomFilter> customFilterRegist(){
 		FilterRegistrationBean<CustomFilter> filterRegistration = new FilterRegistrationBean<CustomFilter>();
         filterRegistration.setFilter(new CustomFilter());
-        filterRegistration.setEnabled(true);
         filterRegistration.addUrlPatterns("/*");
         filterRegistration.setOrder(1);
         return filterRegistration;
