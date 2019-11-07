@@ -1,21 +1,32 @@
 package com;
 
-import org.springframework.boot.SpringApplication;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.Banner;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 
 @SpringBootApplication
 @EnableConfigurationProperties
-public class StartApp extends SpringBootServletInitializer{
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(StartApp.class);
-	}
+public class StartApp implements ApplicationRunner{
+	private static Logger log = LogManager.getLogger("default");
 
 	public static void main(String[] args) {
-		SpringApplication.run(StartApp.class, args);
+		new SpringApplicationBuilder(StartApp.class)
+			.web(WebApplicationType.NONE)
+			.bannerMode(Banner.Mode.OFF)
+			.run(args);
+	}
+	
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+		// TODO Auto-generated method stub
+		log.info("start");
 	}
 }
