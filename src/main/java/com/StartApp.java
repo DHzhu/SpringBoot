@@ -10,6 +10,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 @EnableConfigurationProperties
 public class StartApp extends SpringBootServletInitializer{
+	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(StartApp.class);
@@ -18,4 +19,5 @@ public class StartApp extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(StartApp.class, args);
 	}
+
 }
