@@ -96,9 +96,9 @@ public class LogUtil {
 				.withFilePattern(loggerPathPrefix + ".%d{yyyy-MM-dd}.%i.log")
 				.withAppend(true)
 				.withStrategy(strategy)
-				.withName(loggerName)
+				.setName(loggerName)
 				.withPolicy(policyComposite)
-				.withLayout(layout)
+				.setLayout(layout)
 				.build();
 		appender.start();
 		config.addAppender(appender);

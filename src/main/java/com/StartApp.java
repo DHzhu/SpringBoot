@@ -6,6 +6,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+import com.utils.ApplicationStartedEventListener;
+
 
 @SpringBootApplication
 @EnableConfigurationProperties
@@ -16,6 +18,10 @@ public class StartApp extends SpringBootServletInitializer{
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(StartApp.class, args);
+		SpringApplication app = new SpringApplication(StartApp.class);
+
+        ApplicationStartedEventListener asel = new ApplicationStartedEventListener();
+        app.addListeners(asel);
+        app.run(args);
 	}
 }

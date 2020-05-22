@@ -2,8 +2,8 @@
 <Configuration status="INFO" monitorInterval="300">
 	
 	<properties> 
-		<property name="logDir" value="D:/weblogs/SpringBoot" />
-		<property name="logLevel" value="INFO" />
+		<property name="logDir" value="${ctx:logDir}" />
+		<property name="logLevel" value="${ctx:logLevel}" />
 		<property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5level [%file:%line] %msg%n" />
 	</properties>
 
