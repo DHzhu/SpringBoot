@@ -1,0 +1,16 @@
+  security:
+    oauth2:
+      client:
+        registration:
+          test:
+            client-id: 
+            client-secret: 
+            authorization-grant-type: 
+            scope: 
+            redirect-uri: 
+        provider:
+          test:
+            token-uri: 
+            authorization-uri: 
+            user-info-uri: 
+            userNameAttribute: 
